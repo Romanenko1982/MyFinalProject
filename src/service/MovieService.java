@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class MovieService {
 
-    private File movieDataBase = new File("Movies/MoviesDataBase.txt");
+    private File movieDataBase = new File("resources/Movies/MoviesDataBase.txt");
     private HashMap<Integer, Movie> movieMap;
     private TicketService ticketService = new TicketService();
     private Scanner scanner = new Scanner(System.in);

@@ -1,15 +1,21 @@
 package service;
 
+import static java.lang.String.format;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Scanner;
 import model.Movie;
 import model.Ticket;
 import model.User;
 import model.UserType;
-
-import javax.jws.soap.SOAPBinding;
-import java.io.*;
-import java.util.*;
-
-import static java.lang.String.format;
 
 public class TicketService {
 
@@ -18,11 +24,11 @@ public class TicketService {
     private List<Ticket> purchaseTicketsUser;
     private UserService userService = new UserService();
     private Scanner scanner = new Scanner(System.in);
-    private static final String USER_PURCHASE_TICKET_LIST_PATH = "Users/%s_purchaseTickets.txt";
+    private static final String USER_PURCHASE_TICKET_LIST_PATH = "resources/Users/%s_purchaseTickets.txt";
 
 
     public List<Ticket> getTicketListByMovie(String movieName) {
-        File file = new File(format("Tickets/%s_tickets.txt", movieName));
+        File file = new File(format("resources/Tickets/%s_tickets.txt", movieName));
         if (file.exists()) {
             try (FileInputStream fis = new FileInputStream(file)) {
                 ObjectInputStream ois = new ObjectInputStream(fis);
@@ -38,7 +44,7 @@ public class TicketService {
     }
 
     private void createFile(String movieName, List<Ticket> ticketsList) {
-        try (FileOutputStream fos = new FileOutputStream(format("%s/%s_tickets.txt", ticketsDirectory, movieName))) {
+        try (FileOutputStream fos = new FileOutputStream(format("resources/%s/%s_tickets.txt", ticketsDirectory, movieName))) {
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(ticketsList);
         } catch (IOException e) {

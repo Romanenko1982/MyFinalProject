@@ -77,6 +77,10 @@ public class MenuService {
                     ticketService.returnTicket(movieService);
                     break;
                 case 5:
+                    menu.printTheWelcomeMenuView();
+                    startMenu();
+                    break;
+                case 6:
                     exit();
                     break;
                 default:
@@ -117,6 +121,10 @@ public class MenuService {
                     ticketService.showPurchaseTicketForManagerByLogin();
                     break;
                 case 7:
+                    menu.printTheWelcomeMenuView();
+                    startMenu();
+                    break;
+                case 8:
                     exit();
                     break;
                 default:
@@ -148,6 +156,10 @@ public class MenuService {
                     movieService.removeMovie();
                     break;
                 case 6:
+                    menu.printTheWelcomeMenuView();
+                    startMenu();
+                    break;
+                case 7:
                     exit();
                     break;
                 default:

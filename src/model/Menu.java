@@ -17,7 +17,8 @@ public class Menu {
         System.out.println("2. Купить билет");
         System.out.println("3. Просмотреть купленные билеты");
         System.out.println("4. Вернуть билет");
-        System.out.println("5. Выход");
+        System.out.println("5. Вернуться в главное меню");
+        System.out.println("6. Выход");
     }
 
     public void printManagerEditorMenu() {
@@ -28,7 +29,8 @@ public class Menu {
         System.out.println("4. Добавить билет пользователю");
         System.out.println("5. Удалить билет пользователя");
         System.out.println("6. Показать купленные билеты пользователя");
-        System.out.println("7. Выход");
+        System.out.println("7. Вернуться в главное меню");
+        System.out.println("8. Выход");
     }
 
     public void printTheAdministratorMenuView() {
@@ -38,7 +40,8 @@ public class Menu {
         System.out.println("3. Удалить пользователя");
         System.out.println("4. Добавить фильм");
         System.out.println("5. Удалить фильм");
-        System.out.println("6. Выход");
+        System.out.println("6. Вернуться в главное меню");
+        System.out.println("7. Выход");
     }
 
     public void printEditUserMenuView() {
